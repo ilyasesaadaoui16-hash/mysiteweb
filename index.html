@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio Website">
+    <title data-i18n="page_title">الموقع الشخصي</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo" data-i18n="logo">اسمك هنا</div>
+            <ul class="nav-links">
+                <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
+                <li><a href="#about" data-i18n="nav_about">نبذة عني</a></li>
+                <li><a href="#skills" data-i18n="nav_skills">المهارات</a></li>
+                <li><a href="#experience" data-i18n="nav_exp">الخبرات</a></li>
+                <li><a href="#projects" data-i18n="nav_projects">المشاريع</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">التواصل</a></li>
+            </ul>
+            <div class="controls">
+                <button id="theme-toggle" aria-label="تبديل الوضع"><i class="fas fa-moon"></i></button>
+                <div class="lang-switch">
+                    <button data-lang="ar">العربية</button>
+                    <button data-lang="fr">FR</button>
+                    <button data-lang="en">EN</button>
+                </div>
+                <button class="mobile-menu" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- الرئيسية -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 data-i18n="hero_greeting">مرحباً، أنا</h1>
+                <h2 data-i18n="hero_name">[الاسم الكامل]</h2>
+                <p data-i18n="hero_title">[المسمى الوظيفي / التخصص]</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn primary" data-i18n="btn_contact">تواصل معي</a>
+                    <a href="#" class="btn secondary" data-i18n="btn_cv" download>📄 تحميل السيرة الذاتية</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- ضع صورتك هنا -->
+                <img src="https://placehold.co/400x400/2563eb/ffffff?text=Your+Photo" alt="صورة شخصية">
+            </div>
+        </section>
+
+        <!-- نبذة عني -->
+        <section id="about" class="section">
+            <h2 data-i18n="about_title">نبذة عني</h2>
+            <p data-i18n="about_desc">[اكتب هنا نبذة مختصرة عن خلفيتك، شغفك، وما تسعى لتحقيقه. هذا النص مؤقت وسيتم استبداله لاحقاً.]</p>
+        </section>
+
+        <!-- المهارات -->
+        <section id="skills" class="section">
+            <h2 data-i18n="skills_title">المهارات</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><span data-i18n="skill_1">مهارة 1</span></div>
+                <div class="skill-card"><span data-i18n="skill_2">مهارة 2</span></div>
+                <div class="skill-card"><span data-i18n="skill_3">مهارة 3</span></div>
+                <div class="skill-card"><span data-i18n="skill_4">مهارة 4</span></div>
+            </div>
+        </section>
+
+        <!-- الخبرات / التعليم -->
+        <section id="experience" class="section">
+            <h2 data-i18n="exp_title">الخبرات والتعليم</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 data-i18n="exp_1_title">[المسمى الوظيفي]</h3>
+                    <span class="date" data-i18n="exp_1_date">2020 - 2023</span>
+                    <p data-i18n="exp_1_desc">[وصف مختصر للدور والمهام]</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 data-i18n="edu_1_title">[اسم الشهادة / التخصص]</h3>
+                    <span class="date" data-i18n="edu_1_date">2016 - 2020</span>
+                    <p data-i18n="edu_1_desc">[اسم الجامعة أو المؤسسة]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- المشاريع -->
+        <section id="projects" class="section">
+            <h2 data-i18n="projects_title">المشاريع</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://placehold.co/600x300/e2e8f0/1e293b?text=Project+1" alt="مشروع 1">
+                    <h3 data-i18n="proj_1_title">عنوان المشروع 1</h3>
+                    <p data-i18n="proj_1_desc">وصف مختصر للمشروع والتقنيات المستخدمة.</p>
+                    <a href="#" target="_blank" data-i18n="btn_preview">معاينة</a>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x300/e2e8f0/1e293b?text=Project+2" alt="مشروع 2">
+                    <h3 data-i18n="proj_2_title">عنوان المشروع 2</h3>
+                    <p data-i18n="proj_2_desc">وصف مختصر للمشروع والتقنيات المستخدمة.</p>
+                    <a href="#" target="_blank" data-i18n="btn_preview">معاينة</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- التواصل -->
+        <section id="contact" class="section">
+            <h2 data-i18n="contact_title">تواصل معي</h2>
+            <p data-i18n="contact_desc">يمكنك الوصول إلي عبر القنوات التالية:</p>
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer_text">© 2026 [اسمك]. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
