@@ -9,8 +9,8 @@ AOS.init({
 // نصوص الترجمات - ثلاث لغات
 const translations = {
     ar: {
-        page_title: "إلياس الوجدي | البنية التحتية الرقمية",
-        logo: "إلياس الوجدي",
+        page_title: "إلياس سعداوي | البنية التحتية الرقمية",
+        logo: "إلياس سعداوي",
         nav_home: "الرئيسية", nav_about: "نبذة عني", nav_skills: "المهارات",
         nav_exp: "الخبرات", nav_projects: "المشاريع", nav_contact: "التواصل",
         hero_greeting: "مرحباً، أنا",
@@ -47,8 +47,8 @@ const translations = {
         footer_sub: "صُنع بـ ❤️ وتقنيات الويب الحديثة"
     },
     fr: {
-        page_title: "Ilyas El Oujdi | Infrastructure Numérique",
-        logo: "Ilyas El Oujdi",
+        page_title: "Ilyas saadaoui | Infrastructure Numérique",
+        logo: "Ilyas saadaoui",
         nav_home: "Accueil", nav_about: "À propos", nav_skills: "Compétences",
         nav_exp: "Expérience", nav_projects: "Projets", nav_contact: "Contact",
         hero_greeting: "Bonjour, je suis",
@@ -85,8 +85,8 @@ const translations = {
         footer_sub: "Créé avec ❤️ et les technologies web modernes"
     },
     en: {
-        page_title: "Ilyas El Oujdi | Digital Infrastructure",
-        logo: "Ilyas El Oujdi",
+        page_title: "Ilyas saadaoui | Digital Infrastructure",
+        logo: "Ilyas saadaoui",
         nav_home: "Home", nav_about: "About", nav_skills: "Skills",
         nav_exp: "Experience", nav_projects: "Projects", nav_contact: "Contact",
         hero_greeting: "Hello, I'm",
