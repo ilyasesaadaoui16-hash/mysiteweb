@@ -52,6 +52,22 @@
     <main>
         <!-- الرئيسية -->
         <section id="home" class="hero">
+            <div class="controls">
+    <a href="cv.pdf" download class="cv-btn-nav" title="تحميل السيرة الذاتية">
+        <i class="fas fa-download"></i>
+    </a>
+    <button id="theme-toggle" aria-label="تبديل الوضع">
+        <i class="fas fa-moon"></i>
+    </button>
+    <div class="lang-switch">
+        <button data-lang="ar" class="active">العربية</button>
+        <button data-lang="fr">FR</button>
+        <button data-lang="en">EN</button>
+    </div>
+    <button class="mobile-menu" aria-label="القائمة">
+        <i class="fas fa-bars"></i>
+    </button>
+</div>
             <div class="hero-content" data-aos="fade-left">
                 <h1 data-i18n="hero_greeting">مرحباً، أنا</h1>
                 <h2 data-i18n="hero_name">إلياس سعداوي</h2>
@@ -69,7 +85,7 @@
             </div>
             <div class="hero-image" data-aos="fade-right">
                 <div class="image-wrapper">
-                    <img src="profil.png" alt="إلياس سعداوي">
+                    <img src="profile.jpg" alt="إلياس سعداوي">
                     <div class="badge-ccna">
                         <i class="fas fa-certificate"></i>
                         <span>CCNA</span>
@@ -266,3 +282,22 @@
     <script src="script.js"></script>
 </body>
 </html>
+<div class="social-links" data-aos="fade-up" data-aos-delay="100">
+    <a href="mailto:yourname@gmail.com" aria-label="Email" class="social-btn">
+        <i class="fas fa-envelope"></i>
+        <span data-i18n="social_email">البريد</span>
+    </a>
+    <a href="https://linkedin.com/in/..." target="_blank" aria-label="LinkedIn" class="social-btn">
+        <i class="fab fa-linkedin"></i>
+        <span>LinkedIn</span>
+    </a>
+    <a href="https://github.com/..." target="_blank" aria-label="GitHub" class="social-btn">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+    </a>
+    <!-- زر WhatsApp الجديد -->
+    <a href="https://wa.me/+212628804280" target="_blank" aria-label="WhatsApp" class="social-btn whatsapp">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
+</div>
