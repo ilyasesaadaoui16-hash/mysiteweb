@@ -3,16 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Portfolio Website">
-    <title data-i18n="page_title">الموقع الشخصي</title>
+    <meta name="description" content="موقع إلياس الوجدي الشخصي - متخصص في البنية التحتية الرقمية والأنظمة والشبكات">
+    <title data-i18n="page_title">إلياس الوجدي | البنية التحتية الرقمية</title>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    
     <!-- أيقونات Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- مكتبة الأنيميشن AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- خط تجوال للعربية -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- خلفية متحركة للشبكات -->
+    <div class="network-bg">
+        <div class="node"></div><div class="node"></div><div class="node"></div>
+        <div class="node"></div><div class="node"></div><div class="node"></div>
+        <div class="connection"></div><div class="connection"></div><div class="connection"></div>
+    </div>
+
     <header>
         <nav class="navbar">
-            <div class="logo" data-i18n="logo">اسمك هنا</div>
+            <div class="logo" data-i18n="logo">إلياس الوجدي</div>
             <ul class="nav-links">
                 <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
                 <li><a href="#about" data-i18n="nav_about">نبذة عني</a></li>
@@ -24,7 +40,7 @@
             <div class="controls">
                 <button id="theme-toggle" aria-label="تبديل الوضع"><i class="fas fa-moon"></i></button>
                 <div class="lang-switch">
-                    <button data-lang="ar">العربية</button>
+                    <button data-lang="ar" class="active">العربية</button>
                     <button data-lang="fr">FR</button>
                     <button data-lang="en">EN</button>
                 </div>
@@ -36,90 +52,217 @@
     <main>
         <!-- الرئيسية -->
         <section id="home" class="hero">
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-left">
                 <h1 data-i18n="hero_greeting">مرحباً، أنا</h1>
-                <h2 data-i18n="hero_name">[إلياس سعداوي]</h2>
-                <p data-i18n="hero_title">[الأنظمة و الشبكات]</p>
+                <h2 data-i18n="hero_name">إلياس الوجدي</h2>
+                <p class="hero-title" data-i18n="hero_title">البنية التحتية الرقمية - خيار الأنظمة والشبكات</p>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">CCNA Certified | Network & Security Enthusiast</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn primary" data-i18n="btn_contact">تواصل معي</a>
-                    <a href="ILYASE CV.pdf" class="btn secondary" data-i18n="btn_cv" download>📄 تحميل السيرة الذاتية</a>
+                    <a href="cv.pdf" class="btn secondary" data-i18n="btn_cv" download>📄 تحميل السيرة الذاتية</a>
+                </div>
+                <div class="social-mini">
+                    <a href="mailto:yourname@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://linkedin.com/in/..." target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/..." target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
-                <!-- ضع صورتك هنا -->
-                <img src="https://placehold.co/400x400/2563eb/ffffff?text=Your+Photo" alt="profil.png">
+            <div class="hero-image" data-aos="fade-right">
+                <div class="image-wrapper">
+                    <img src="https://placehold.co/400x400/2563eb/ffffff?text=EW" alt="إلياس الوجدي">
+                    <div class="badge-ccna">
+                        <i class="fas fa-certificate"></i>
+                        <span>CCNA</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- نبذة عني -->
         <section id="about" class="section">
-            <h2 data-i18n="about_title">نبذة عني</h2>
-            <p data-i18n="about_desc">[اكتب هنا نبذة مختصرة عن خلفيتك، شغفك، وما تسعى لتحقيقه. هذا النص مؤقت وسيتم استبداله لاحقاً.]</p>
+            <h2 data-aos="fade-up" data-i18n="about_title">نبذة عني</h2>
+            <div class="about-content" data-aos="fade-up" data-aos-delay="100">
+                <p data-i18n="about_desc">أنا إلياس الوجدي، متخصص في البنية التحتية الرقمية مع تركيز على الأنظمة والشبكات. أحمل شهادة CCNA وأطمح لتوظيف مهاراتي التقنية في بيئة مهنية ديناميكية، مع تعميق معرفتي في مجال الأمن السيبراني والمساهمة في مشاريع مبتكرة تحمي البنى الرقمية وتدعم التحول الرقمي.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <i class="fas fa-shield-alt"></i>
+                        <span data-i18n="stat_security">الأمن السيبراني</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-network-wired"></i>
+                        <span data-i18n="stat_networks">الشبكات المؤسسية</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-laptop-code"></i>
+                        <span data-i18n="stat_automation">الأتمتة</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- المهارات -->
         <section id="skills" class="section">
-            <h2 data-i18n="skills_title">المهارات</h2>
-            <div class="skills-grid">
-                <div class="skill-card"><span data-i18n="skill_1">مهارة 1</span></div>
-                <div class="skill-card"><span data-i18n="skill_2">مهارة 2</span></div>
-                <div class="skill-card"><span data-i18n="skill_3">مهارة 3</span></div>
-                <div class="skill-card"><span data-i18n="skill_4">مهارة 4</span></div>
+            <h2 data-aos="fade-up" data-i18n="skills_title">المهارات التقنية</h2>
+            <div class="skills-container">
+                <div class="skill-category" data-aos="fade-up">
+                    <h3><i class="fas fa-microchip"></i> <span data-i18n="skill_cat_simulation">المحاكاة والتحليل</span></h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fas fa-wifi"></i>
+                            <strong>Wireshark</strong>
+                            <span data-i18n="skill_desc_analysis">تحليل حزم الشبكة</span>
+                        </div>
+                        <div class="skill-card featured">
+                            <i class="fas fa-project-diagram"></i>
+                            <strong>Cisco Packet Tracer</strong>
+                            <span class="certified" data-i18n="certified">✓ معتمد</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class="fas fa-server"></i> <span data-i18n="skill_cat_virtualization">الافتراضية</span></h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fas fa-desktop"></i>
+                            <strong>VMware Workstation</strong>
+                            <span data-i18n="skill_desc_vm">إنشاء وإدارة الآلات الافتراضية</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3><i class="fas fa-briefcase"></i> <span data-i18n="skill_cat_office">الأدوات المكتبية</span></h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fab fa-microsoft"></i>
+                            <strong>Microsoft Office</strong>
+                            <span>Word • PowerPoint • Excel</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- الخبرات / التعليم -->
+        <!-- الخبرات والتعليم -->
         <section id="experience" class="section">
-            <h2 data-i18n="exp_title">الخبرات والتعليم</h2>
+            <h2 data-aos="fade-up" data-i18n="exp_title">المسار التعليمي والشهادات</h2>
             <div class="timeline">
-                <div class="timeline-item">
-                    <h3 data-i18n="exp_1_title">[المسمى الوظيفي]</h3>
-                    <span class="date" data-i18n="exp_1_date">2020 - 2023</span>
-                    <p data-i18n="exp_1_desc">[وصف مختصر للدور والمهام]</p>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="edu_ista_title">ISTA OUJDA</h3>
+                        <span class="date">2023 - 2025</span>
+                        <p data-i18n="edu_ista_desc">Technicien Spécialisé en Systèmes et Réseaux</p>
+                        <ul class="timeline-details">
+                            <li data-i18n="edu_pie">✓ Certificat PIE - Parcours d'innovation entrepreneuriale</li>
+                            <li data-i18n="edu_soft">✓ Développement des soft skills: gestion de projet, communication, leadership</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <h3 data-i18n="edu_1_title">[اسم الشهادة / التخصص]</h3>
-                    <span class="date" data-i18n="edu_1_date">2016 - 2020</span>
-                    <p data-i18n="edu_1_desc">[اسم الجامعة أو المؤسسة]</p>
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="cert_ccna_title">شهادات Cisco CCNA</h3>
+                        <span class="date">2025</span>
+                        <ul class="timeline-details">
+                            <li>🔐 Enterprise Networking, Security & Automation</li>
+                            <li>🔄 Switching, Routing, and Wireless Essentials</li>
+                            <li>🛡️ Network Security</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="internship_title">تدريب مهني - ISTA OUJDA</h3>
+                        <span class="date">13 Jan 2025 - 15 Feb 2025</span>
+                        <p data-i18n="internship_desc">Stage de fin de formation - Déclarant en ISTA</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="edu_lycee_title">LYCÉE ABDELMOUMEN</h3>
+                        <span class="date">2022 - 2023</span>
+                        <p data-i18n="edu_bac_desc">Baccalauréat</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- المشاريع -->
+        <!-- المشاريع (قوالب جاهزة للمستقبل) -->
         <section id="projects" class="section">
-            <h2 data-i18n="projects_title">المشاريع</h2>
+            <h2 data-aos="fade-up" data-i18n="projects_title">المشاريع</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-i18n="projects_subtitle">قريباً: مشاريعي في تصميم الشبكات والأمن السيبراني</p>
             <div class="projects-grid">
-                <div class="project-card">
-                    <img src="https://placehold.co/600x300/e2e8f0/1e293b?text=Project+1" alt="مشروع 1">
-                    <h3 data-i18n="proj_1_title">عنوان المشروع 1</h3>
-                    <p data-i18n="proj_1_desc">وصف مختصر للمشروع والتقنيات المستخدمة.</p>
-                    <a href="#" target="_blank" data-i18n="btn_preview">معاينة</a>
+                <div class="project-card placeholder" data-aos="fade-up">
+                    <div class="project-placeholder">
+                        <i class="fas fa-network-wired"></i>
+                        <span data-i18n="proj_placeholder_1">مشروع شبكة مؤسسية</span>
+                    </div>
+                    <h3 data-i18n="proj_title_1">عنوان المشروع 1</h3>
+                    <p data-i18n="proj_desc_1">سيتم إضافة وصف المشروع والتقنيات المستخدمة هنا قريباً.</p>
+                    <a href="#" class="btn-preview disabled" data-i18n="btn_coming_soon">قريباً 🔜</a>
                 </div>
-                <div class="project-card">
-                    <img src="https://placehold.co/600x300/e2e8f0/1e293b?text=Project+2" alt="مشروع 2">
-                    <h3 data-i18n="proj_2_title">عنوان المشروع 2</h3>
-                    <p data-i18n="proj_2_desc">وصف مختصر للمشروع والتقنيات المستخدمة.</p>
-                    <a href="#" target="_blank" data-i18n="btn_preview">معاينة</a>
+                <div class="project-card placeholder" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-placeholder">
+                        <i class="fas fa-shield-alt"></i>
+                        <span data-i18n="proj_placeholder_2">مشروع أمن شبكي</span>
+                    </div>
+                    <h3 data-i18n="proj_title_2">عنوان المشروع 2</h3>
+                    <p data-i18n="proj_desc_2">سيتم إضافة وصف المشروع والتقنيات المستخدمة هنا قريباً.</p>
+                    <a href="#" class="btn-preview disabled" data-i18n="btn_coming_soon">قريباً 🔜</a>
                 </div>
+            </div>
+            <div class="add-project-hint" data-aos="fade-up">
+                <i class="fas fa-lightbulb"></i>
+                <span data-i18n="add_project_hint">💡 لإنشاء مشروع جديد: انسخ كود .project-card وعدّل المحتوى!</span>
             </div>
         </section>
 
         <!-- التواصل -->
         <section id="contact" class="section">
-            <h2 data-i18n="contact_title">تواصل معي</h2>
-            <p data-i18n="contact_desc">يمكنك الوصول إلي عبر القنوات التالية:</p>
-            <div class="social-links">
-                <a href="ilyasesaadaoui21@gmail.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="www.linkedin.com/in/ilyase-saadaoui-4838b01aa" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/ilyasesaadaoui16-hash" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <h2 data-aos="fade-up" data-i18n="contact_title">تواصل معي</h2>
+            <p data-aos="fade-up" data-i18n="contact_desc">أنا متاح للتعاون في مشاريع الشبكات، الأمن السيبراني، والاستشارات التقنية. لا تتردد في التواصل!</p>
+            
+            <div class="contact-info" data-aos="fade-up">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>وجدة، المغرب 🇲🇦</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span dir="ltr">+212 XXX XXX XXX</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:yourname@gmail.com">yourname@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="social-links" data-aos="fade-up" data-aos-delay="100">
+                <a href="mailto:yourname@gmail.com" aria-label="Email" class="social-btn">
+                    <i class="fas fa-envelope"></i>
+                    <span data-i18n="social_email">البريد</span>
+                </a>
+                <a href="https://linkedin.com/in/..." target="_blank" aria-label="LinkedIn" class="social-btn">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/..." target="_blank" aria-label="GitHub" class="social-btn">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p data-i18n="footer_text">© 2026 [إلياس سعداوي]. جميع الحقوق محفوظة.</p>
+        <p data-i18n="footer_text">© 2026 إلياس الوجدي. جميع الحقوق محفوظة.</p>
+        <p class="footer-sub" data-i18n="footer_sub">صُنع بـ ❤️ وتقنيات الويب الحديثة</p>
     </footer>
 
+    <!-- مكتبة الأنيميشن -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
