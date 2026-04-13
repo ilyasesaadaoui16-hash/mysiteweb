@@ -419,3 +419,36 @@ footer {
 
 /* ===== AOS Override ===== */
 [data-aos] { will-change: transform, opacity; }
+/* زر CV في القائمة */
+.cv-btn-nav {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+.cv-btn-nav:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* زر WhatsApp */
+.social-btn.whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    border-color: #25D366;
+}
+.social-btn.whatsapp:hover {
+    background: linear-gradient(135deg, #128C7E, #075E54);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
