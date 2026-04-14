@@ -39,12 +39,20 @@ const translations = {
         proj_title_1: "عنوان المشروع 1", proj_desc_1: "سيتم إضافة وصف المشروع والتقنيات المستخدمة هنا قريباً.",
         proj_title_2: "عنوان المشروع 2", proj_desc_2: "سيتم إضافة وصف المشروع والتقنيات المستخدمة هنا قريباً.",
         btn_coming_soon: "قريباً 🔜",
-        add_project_hint: "💡 لإنشاء مشروع جديد: انسخ كود .project-card وعدّل المحتوى!",
+        add_project_hint: "🚀 جاهز لإضافة مشاريعك؟ انسخ البطاقة وابدأ الإبداع!",
         contact_title: "تواصل معي",
         contact_desc: "أنا متاح للتعاون في مشاريع الشبكات، الأمن السيبراني، والاستشارات التقنية. لا تتردد في التواصل!",
         social_email: "البريد",
         footer_text: "© 2026 إلياس الوجدي. جميع الحقوق محفوظة.",
-        footer_sub: "صُنع بـ ❤️ وتقنيات الويب الحديثة"
+        footer_sub: "مُطور بواسطة إلياس سعداوي",
+        settings_title: "⚙️ إعدادات الموقع",
+        settings_theme: "🎨 المظهر",
+        settings_dark_mode: "الوضع الليلي",
+        settings_lang: "🌐 اللغة",
+        settings_font: "🔤 حجم الخط",
+        settings_animations: "✨ الحركات",
+        settings_reduce_motion: "تقليل الحركات",
+        settings_reset: "🔄 إعادة تعيين"
     },
     fr: {
         page_title: "Ilyas saadaoui | Infrastructure Numérique",
@@ -77,12 +85,20 @@ const translations = {
         proj_title_1: "Titre du projet 1", proj_desc_1: "Description et technologies à venir bientôt.",
         proj_title_2: "Titre du projet 2", proj_desc_2: "Description et technologies à venir bientôt.",
         btn_coming_soon: "Bientôt 🔜",
-        add_project_hint: "💡 Pour ajouter un projet: copiez le code .project-card et modifiez le contenu!",
+        add_project_hint: "🚀 Prêt à ajouter vos projets? Copiez la carte et soyez créatif!",
         contact_title: "Contact",
         contact_desc: "Je suis disponible pour collaborer sur des projets réseaux, cybersécurité et conseil technique. N'hésitez pas à me contacter!",
         social_email: "Email",
         footer_text: "© 2026 Ilyas El Oujdi. Tous droits réservés.",
-        footer_sub: "Créé avec ❤️ et les technologies web modernes"
+        footer_sub: "Développé par Ilyas saadaoui",
+        settings_title: "⚙️ Paramètres du site",
+        settings_theme: "🎨 Apparence",
+        settings_dark_mode: "Mode sombre",
+        settings_lang: "🌐 Langue",
+        settings_font: "🔤 Taille de police",
+        settings_animations: "✨ Animations",
+        settings_reduce_motion: "Réduire les animations",
+        settings_reset: "🔄 Réinitialiser"
     },
     en: {
         page_title: "Ilyas saadaoui | Digital Infrastructure",
@@ -115,50 +131,28 @@ const translations = {
         proj_title_1: "Project Title 1", proj_desc_1: "Project description and technologies used will be added soon.",
         proj_title_2: "Project Title 2", proj_desc_2: "Project description and technologies used will be added soon.",
         btn_coming_soon: "Coming Soon 🔜",
-        add_project_hint: "💡 To add a new project: copy .project-card code and edit the content!",
+        add_project_hint: "🚀 Ready to add your projects? Copy the card and get creative!",
         contact_title: "Contact",
         contact_desc: "I'm available for collaboration on networking, cybersecurity, and technical consulting projects. Feel free to reach out!",
         social_email: "Email",
         footer_text: "© 2026 Ilyas El Oujdi. All rights reserved.",
-        footer_sub: "Built with ❤️ & modern web technologies"
+        footer_sub: "Built by Ilyas saadaoui",
+        settings_title: "⚙️ Site Settings",
+        settings_theme: "🎨 Appearance",
+        settings_dark_mode: "Dark Mode",
+        settings_lang: "🌐 Language",
+        settings_font: "🔤 Font Size",
+        settings_animations: "✨ Animations",
+        settings_reduce_motion: "Reduce Motion",
+        settings_reset: "🔄 Reset All"
     }
 };
-// للعربية:
-settings_title: "⚙️ إعدادات الموقع",
-settings_theme: "🎨 المظهر",
-settings_dark_mode: "الوضع الليلي",
-settings_lang: "🌐 اللغة",
-settings_font: "🔤 حجم الخط",
-settings_animations: "✨ الحركات",
-settings_reduce_motion: "تقليل الحركات",
-settings_reset: "🔄 إعادة تعيين",
 
-// للفرنسية:
-settings_title: "⚙️ Paramètres du site",
-settings_theme: "🎨 Apparence",
-settings_dark_mode: "Mode sombre",
-settings_lang: "🌐 Langue",
-settings_font: "🔤 Taille de police",
-settings_animations: "✨ Animations",
-settings_reduce_motion: "Réduire les animations",
-settings_reset: "🔄 Réinitialiser",
-
-// للإنجليزية:
-settings_title: "⚙️ Site Settings",
-settings_theme: "🎨 Appearance",
-settings_dark_mode: "Dark Mode",
-settings_lang: "🌐 Language",
-settings_font: "🔤 Font Size",
-settings_animations: "✨ Animations",
-settings_reduce_motion: "Reduce Motion",
-settings_reset: "🔄 Reset All",
-
-// عناصر التحكم
+// عناصر التحكم الأساسية
 const langButtons = document.querySelectorAll('.lang-switch button');
 const themeToggle = document.getElementById('theme-toggle');
 const mobileMenuBtn = document.querySelector('.mobile-menu');
 const navLinks = document.querySelector('.nav-links');
-const langSwitch = document.querySelector('.lang-switch');
 
 // تبديل اللغة
 function setLanguage(lang) {
@@ -166,17 +160,10 @@ function setLanguage(lang) {
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     localStorage.setItem('preferredLang', lang);
     
-    // تحديث النصوص
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-            el.textContent = translations[lang][key];
-        }
+        if (translations[lang][key]) el.textContent = translations[lang][key];
     });
-    
-    // تحديث زر اللغة النشط
-    langButtons.forEach(btn => btn.classList.remove('active'));
-    document.querySelector(`[data-lang="${lang}"]`)?.classList.add('active');
 }
 
 langButtons.forEach(btn => {
@@ -187,9 +174,7 @@ langButtons.forEach(btn => {
 function setTheme(theme) {
     document.body.setAttribute('data-theme', theme);
     localStorage.setItem('preferredTheme', theme);
-    themeToggle.innerHTML = theme === 'dark' 
-        ? '<i class="fas fa-sun"></i>' 
-        : '<i class="fas fa-moon"></i>';
+    themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
 }
 
 themeToggle.addEventListener('click', () => {
@@ -198,18 +183,7 @@ themeToggle.addEventListener('click', () => {
 });
 
 // القائمة المتنقلة
-mobileMenuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    langSwitch.classList.toggle('active');
-});
-
-// إغلاق القائمة عند النقر على رابط
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        langSwitch.classList.remove('active');
-    });
-});
+mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
 
 // تمييز الرابط النشط عند التمرير
 const sections = document.querySelectorAll('section');
@@ -218,25 +192,16 @@ const navItems = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(sec => {
-        const top = sec.offsetTop - 120;
+        const top = sec.offsetTop - 100;
         if (pageYOffset >= top) current = sec.getAttribute('id');
     });
     navItems.forEach(a => {
         a.classList.remove('active');
-        if (a.getAttribute('href')?.includes(current)) a.classList.add('active');
+        if (a.getAttribute('href').includes(current)) a.classList.add('active');
     });
 });
 
-// تحميل التفضيلات المحفوظة عند البدء
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLang') || 'ar';
-    const savedTheme = localStorage.getItem('preferredTheme') || 'light';
-    setLanguage(savedLang);
-    setTheme(savedTheme);
-    
-    // إعادة تهيئة AOS بعد تحميل المحتوى
-    AOS.refresh();
-    // ===== نظام الإعدادات الاحترافي =====
+// ===== نظام الإعدادات الاحترافي =====
 const settingsPanel = document.getElementById('settingsPanel');
 const settingsOverlay = document.getElementById('settingsOverlay');
 const settingsToggle = document.querySelector('.settings-toggle');
@@ -319,11 +284,11 @@ resetSettings.addEventListener('click', () => {
     }
 });
 
-// تحميل الإعدادات المحفوظة
+// تحميل التفضيلات المحفوظة عند البدء
 document.addEventListener('DOMContentLoaded', () => {
-    // تحميل حالة الوضع الليلي
+    const savedLang = localStorage.getItem('preferredLang') || 'ar';
     const savedTheme = localStorage.getItem('preferredTheme') || 'light';
-    darkModeSwitch.checked = savedTheme === 'dark';
+    setLanguage(savedLang);
     setTheme(savedTheme);
     
     // تحميل تقليل الحركات
@@ -336,14 +301,14 @@ document.addEventListener('DOMContentLoaded', () => {
     currentFontSize = savedFontSize;
     applyFontSize();
     
-    // تحميل اللغة
-    const savedLang = localStorage.getItem('preferredLang') || 'ar';
-    setLanguage(savedLang);
+    // تحديث حالة مفتاح الوضع الليلي في الإعدادات
+    darkModeSwitch.checked = savedTheme === 'dark';
+    
+    // تحديث أزرار اللغة في الإعدادات
     langOptions.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === savedLang);
     });
     
-    // تهيئة AOS
+    // إعادة تهيئة AOS بعد تحميل المحتوى
     AOS.refresh();
-});
 });
