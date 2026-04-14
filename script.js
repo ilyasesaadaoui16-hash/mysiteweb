@@ -44,15 +44,7 @@ const translations = {
         contact_desc: "أنا متاح للتعاون في مشاريع الشبكات، الأمن السيبراني، والاستشارات التقنية. لا تتردد في التواصل!",
         social_email: "البريد",
         footer_text: "© 2026 إلياس سعداوي. جميع الحقوق محفوظة.",
-        footer_sub: "مُطور بواسطة إلياس سعداوي",
-        settings_title: "⚙️ إعدادات الموقع",
-        settings_theme: "🎨 المظهر",
-        settings_dark_mode: "الوضع الليلي",
-        settings_lang: "🌐 اللغة",
-        settings_font: "🔤 حجم الخط",
-        settings_animations: "✨ الحركات",
-        settings_reduce_motion: "تقليل الحركات",
-        settings_reset: "🔄 إعادة تعيين"
+        footer_sub: "مُطور بواسطة إلياس سعداوي"
     },
     fr: {
         page_title: "Ilyas saadaoui | Infrastructure Numérique",
@@ -90,15 +82,7 @@ const translations = {
         contact_desc: "Je suis disponible pour collaborer sur des projets réseaux, cybersécurité et conseil technique. N'hésitez pas à me contacter!",
         social_email: "Email",
         footer_text: "© 2026 Ilyas saadaoui. Tous droits réservés.",
-        footer_sub: "Développé par Ilyas saadaoui",
-        settings_title: "⚙️ Paramètres du site",
-        settings_theme: "🎨 Apparence",
-        settings_dark_mode: "Mode sombre",
-        settings_lang: "🌐 Langue",
-        settings_font: "🔤 Taille de police",
-        settings_animations: "✨ Animations",
-        settings_reduce_motion: "Réduire les animations",
-        settings_reset: "🔄 Réinitialiser"
+        footer_sub: "Développé par Ilyas saadaoui"
     },
     en: {
         page_title: "Ilyas saadaoui | Digital Infrastructure",
@@ -136,19 +120,11 @@ const translations = {
         contact_desc: "I'm available for collaboration on networking, cybersecurity, and technical consulting projects. Feel free to reach out!",
         social_email: "Email",
         footer_text: "© 2026 Ilyas saadaoui. All rights reserved.",
-        footer_sub: "Built by Ilyas saadaoui",
-        settings_title: "⚙️ Site Settings",
-        settings_theme: "🎨 Appearance",
-        settings_dark_mode: "Dark Mode",
-        settings_lang: "🌐 Language",
-        settings_font: "🔤 Font Size",
-        settings_animations: "✨ Animations",
-        settings_reduce_motion: "Reduce Motion",
-        settings_reset: "🔄 Reset All"
+        footer_sub: "Built by Ilyas saadaoui"
     }
 };
 
-// عناصر التحكم الأساسية
+// عناصر التحكم
 const langButtons = document.querySelectorAll('.lang-switch button');
 const themeToggle = document.getElementById('theme-toggle');
 const mobileMenuBtn = document.querySelector('.mobile-menu');
@@ -183,7 +159,16 @@ themeToggle.addEventListener('click', () => {
 });
 
 // القائمة المتنقلة
-mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// إغلاق القائمة عند النقر على رابط
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
 
 // تمييز الرابط النشط عند التمرير
 const sections = document.querySelectorAll('section');
@@ -201,114 +186,8 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ===== نظام الإعدادات الاحترافي =====
-const settingsPanel = document.getElementById('settingsPanel');
-const settingsOverlay = document.getElementById('settingsOverlay');
-const settingsToggle = document.querySelector('.settings-toggle');
-const settingsClose = document.getElementById('settingsClose');
-const darkModeSwitch = document.getElementById('darkModeSwitch');
-const reduceMotionSwitch = document.getElementById('reduceMotion');
-const fontIncrease = document.getElementById('fontIncrease');
-const fontDecrease = document.getElementById('fontDecrease');
-const fontSizeValue = document.getElementById('fontSizeValue');
-const resetSettings = document.getElementById('resetSettings');
-const langOptions = document.querySelectorAll('.lang-opt');
-
-// فتح/إغلاق نافذة الإعدادات
-function openSettings() {
-    settingsPanel.classList.add('open');
-    settingsOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeSettings() {
-    settingsPanel.classList.remove('open');
-    settingsOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-settingsToggle.addEventListener('click', openSettings);
-settingsClose.addEventListener('click', closeSettings);
-settingsOverlay.addEventListener('click', closeSettings);
-
-// تبديل الوضع الليلي من الإعدادات
-darkModeSwitch.addEventListener('change', () => {
-    const theme = darkModeSwitch.checked ? 'dark' : 'light';
-    setTheme(theme);
-});
-
-// تقليل الحركات
-reduceMotionSwitch.addEventListener('change', () => {
-    document.body.classList.toggle('reduce-motion', reduceMotionSwitch.checked);
-    localStorage.setItem('reduceMotion', reduceMotionSwitch.checked);
-});
-
-// التحكم بحجم الخط
-let currentFontSize = parseInt(localStorage.getItem('fontSize') || '100');
-fontSizeValue.textContent = currentFontSize + '%';
-
-fontIncrease.addEventListener('click', () => {
-    if (currentFontSize < 130) {
-        currentFontSize += 10;
-        applyFontSize();
-    }
-});
-
-fontDecrease.addEventListener('click', () => {
-    if (currentFontSize > 80) {
-        currentFontSize -= 10;
-        applyFontSize();
-    }
-});
-
-function applyFontSize() {
-    document.documentElement.style.fontSize = currentFontSize + '%';
-    fontSizeValue.textContent = currentFontSize + '%';
-    localStorage.setItem('fontSize', currentFontSize);
-}
-
-// خيارات اللغة في الإعدادات
-langOptions.forEach(btn => {
-    btn.addEventListener('click', () => {
-        setLanguage(btn.dataset.lang);
-        langOptions.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-    });
-});
-
-// إعادة تعيين الإعدادات
-resetSettings.addEventListener('click', () => {
-    if (confirm('هل أنت متأكد من إعادة تعيين جميع الإعدادات؟')) {
-        localStorage.clear();
-        location.reload();
-    }
-});
-
-// تحميل التفضيلات المحفوظة عند البدء
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLang') || 'ar';
-    const savedTheme = localStorage.getItem('preferredTheme') || 'light';
-    setLanguage(savedLang);
-    setTheme(savedTheme);
-    
-    // تحميل تقليل الحركات
-    const reduceMotion = localStorage.getItem('reduceMotion') === 'true';
-    reduceMotionSwitch.checked = reduceMotion;
-    if (reduceMotion) document.body.classList.add('reduce-motion');
-    
-    // تحميل حجم الخط
-    const savedFontSize = parseInt(localStorage.getItem('fontSize') || '100');
-    currentFontSize = savedFontSize;
-    applyFontSize();
-    
-    // تحديث حالة مفتاح الوضع الليلي في الإعدادات
-    darkModeSwitch.checked = savedTheme === 'dark';
-    
-    // تحديث أزرار اللغة في الإعدادات
-    langOptions.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === savedLang);
-    });
-    
-    // إعادة تهيئة AOS بعد تحميل المحتوى
-    AOS.refresh();
-});
+// تحميل التفضيلات المحفوظة
+const savedLang = localStorage.getItem('preferredLang') || 'ar';
+const savedTheme = localStorage.getItem('preferredTheme') || 'light';
+setLanguage(savedLang);
+setTheme(savedTheme);
