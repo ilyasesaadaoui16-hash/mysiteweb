@@ -123,6 +123,35 @@ const translations = {
         footer_sub: "Built with ❤️ & modern web technologies"
     }
 };
+// للعربية:
+settings_title: "⚙️ إعدادات الموقع",
+settings_theme: "🎨 المظهر",
+settings_dark_mode: "الوضع الليلي",
+settings_lang: "🌐 اللغة",
+settings_font: "🔤 حجم الخط",
+settings_animations: "✨ الحركات",
+settings_reduce_motion: "تقليل الحركات",
+settings_reset: "🔄 إعادة تعيين",
+
+// للفرنسية:
+settings_title: "⚙️ Paramètres du site",
+settings_theme: "🎨 Apparence",
+settings_dark_mode: "Mode sombre",
+settings_lang: "🌐 Langue",
+settings_font: "🔤 Taille de police",
+settings_animations: "✨ Animations",
+settings_reduce_motion: "Réduire les animations",
+settings_reset: "🔄 Réinitialiser",
+
+// للإنجليزية:
+settings_title: "⚙️ Site Settings",
+settings_theme: "🎨 Appearance",
+settings_dark_mode: "Dark Mode",
+settings_lang: "🌐 Language",
+settings_font: "🔤 Font Size",
+settings_animations: "✨ Animations",
+settings_reduce_motion: "Reduce Motion",
+settings_reset: "🔄 Reset All",
 
 // عناصر التحكم
 const langButtons = document.querySelectorAll('.lang-switch button');
