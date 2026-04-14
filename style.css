@@ -452,3 +452,251 @@ footer {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
 }
+/* ===== نافذة الإعدادات الاحترافية ===== */
+.settings-toggle {
+    background: none;
+    border: 2px solid var(--border);
+    color: var(--text);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.settings-toggle:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: rotate(90deg);
+}
+
+.settings-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 380px;
+    max-width: 90vw;
+    height: 100vh;
+    background: var(--card-bg);
+    border-left: 1px solid var(--border);
+    z-index: 2000;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+}
+[dir="ltr"] .settings-panel {
+    right: auto;
+    left: -400px;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.settings-panel.open {
+    right: 0;
+}
+[dir="ltr"] .settings-panel.open {
+    left: 0;
+}
+
+.settings-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+.settings-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+.settings-header h3 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+.settings-close {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+.settings-close:hover {
+    background: rgba(255,255,255,0.3);
+    transform: rotate(90deg);
+}
+
+.settings-section {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+.settings-section h4 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+}
+
+/* Switch Toggle */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--border);
+    transition: var(--transition);
+    border-radius: 28px;
+}
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    transition: var(--transition);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.switch input:checked + .slider {
+    background: var(--primary);
+}
+.switch input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+/* Language Options */
+.lang-options {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.lang-opt {
+    flex: 1;
+    min-width: 80px;
+    padding: 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    text-align: center;
+}
+.lang-opt:hover, .lang-opt.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Font Size Control */
+.font-size-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.font-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.font-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+#fontSizeValue {
+    min-width: 60px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Reset Button */
+.settings-footer {
+    padding: 1.5rem;
+    text-align: center;
+}
+.reset-btn {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--text-light);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.reset-btn:hover {
+    background: #fee2e2;
+    color: #dc2626;
+    border-color: #dc2626;
+}
+[data-theme="dark"] .reset-btn:hover {
+    background: rgba(220, 38, 38, 0.2);
+}
+
+/* تأثير تقليل الحركات */
+.reduce-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .settings-panel {
+        width: 100%;
+        max-width: 100%;
+    }
+}
