@@ -207,4 +207,114 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // إعادة تهيئة AOS بعد تحميل المحتوى
     AOS.refresh();
+    // ===== نظام الإعدادات الاحترافي =====
+const settingsPanel = document.getElementById('settingsPanel');
+const settingsOverlay = document.getElementById('settingsOverlay');
+const settingsToggle = document.querySelector('.settings-toggle');
+const settingsClose = document.getElementById('settingsClose');
+const darkModeSwitch = document.getElementById('darkModeSwitch');
+const reduceMotionSwitch = document.getElementById('reduceMotion');
+const fontIncrease = document.getElementById('fontIncrease');
+const fontDecrease = document.getElementById('fontDecrease');
+const fontSizeValue = document.getElementById('fontSizeValue');
+const resetSettings = document.getElementById('resetSettings');
+const langOptions = document.querySelectorAll('.lang-opt');
+
+// فتح/إغلاق نافذة الإعدادات
+function openSettings() {
+    settingsPanel.classList.add('open');
+    settingsOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSettings() {
+    settingsPanel.classList.remove('open');
+    settingsOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+settingsToggle.addEventListener('click', openSettings);
+settingsClose.addEventListener('click', closeSettings);
+settingsOverlay.addEventListener('click', closeSettings);
+
+// تبديل الوضع الليلي من الإعدادات
+darkModeSwitch.addEventListener('change', () => {
+    const theme = darkModeSwitch.checked ? 'dark' : 'light';
+    setTheme(theme);
+});
+
+// تقليل الحركات
+reduceMotionSwitch.addEventListener('change', () => {
+    document.body.classList.toggle('reduce-motion', reduceMotionSwitch.checked);
+    localStorage.setItem('reduceMotion', reduceMotionSwitch.checked);
+});
+
+// التحكم بحجم الخط
+let currentFontSize = parseInt(localStorage.getItem('fontSize') || '100');
+fontSizeValue.textContent = currentFontSize + '%';
+
+fontIncrease.addEventListener('click', () => {
+    if (currentFontSize < 130) {
+        currentFontSize += 10;
+        applyFontSize();
+    }
+});
+
+fontDecrease.addEventListener('click', () => {
+    if (currentFontSize > 80) {
+        currentFontSize -= 10;
+        applyFontSize();
+    }
+});
+
+function applyFontSize() {
+    document.documentElement.style.fontSize = currentFontSize + '%';
+    fontSizeValue.textContent = currentFontSize + '%';
+    localStorage.setItem('fontSize', currentFontSize);
+}
+
+// خيارات اللغة في الإعدادات
+langOptions.forEach(btn => {
+    btn.addEventListener('click', () => {
+        setLanguage(btn.dataset.lang);
+        langOptions.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+
+// إعادة تعيين الإعدادات
+resetSettings.addEventListener('click', () => {
+    if (confirm('هل أنت متأكد من إعادة تعيين جميع الإعدادات؟')) {
+        localStorage.clear();
+        location.reload();
+    }
+});
+
+// تحميل الإعدادات المحفوظة
+document.addEventListener('DOMContentLoaded', () => {
+    // تحميل حالة الوضع الليلي
+    const savedTheme = localStorage.getItem('preferredTheme') || 'light';
+    darkModeSwitch.checked = savedTheme === 'dark';
+    setTheme(savedTheme);
+    
+    // تحميل تقليل الحركات
+    const reduceMotion = localStorage.getItem('reduceMotion') === 'true';
+    reduceMotionSwitch.checked = reduceMotion;
+    if (reduceMotion) document.body.classList.add('reduce-motion');
+    
+    // تحميل حجم الخط
+    const savedFontSize = parseInt(localStorage.getItem('fontSize') || '100');
+    currentFontSize = savedFontSize;
+    applyFontSize();
+    
+    // تحميل اللغة
+    const savedLang = localStorage.getItem('preferredLang') || 'ar';
+    setLanguage(savedLang);
+    langOptions.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === savedLang);
+    });
+    
+    // تهيئة AOS
+    AOS.refresh();
+});
 });
